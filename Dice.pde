@@ -1,22 +1,32 @@
 void setup()
 {
 	noLoop();
+	size(500,500);
 }
 void draw()
 {
-	//your code here
+	background(100,100,100);
+	for(int y = 5; y <= 500; y+=55)
+	{
+		for(int x = 5; x <= 500; x+=55)
+		{
+		Die bobu = new Die(x,y);
+		bobu.show();
+		}
+	}
 }
-void mousePressed()
-{
-	redraw();
-}
+// void mousePressed()
+// {
+	
+// }
 class Die //models one single dice cube
 {
-	//variable declarations here
-	
+	int numRoll,myX,myY;
+
 	Die(int x, int y) //constructor
 	{
-		//variable initializations here
+		myX = x;
+		myY = y;
 	}
 	void roll()
 	{
@@ -24,6 +34,8 @@ class Die //models one single dice cube
 	}
 	void show()
 	{
-		//your code here
+		noStroke();
+		fill(255);
+		rect(myX, myY, 50, 50, 5);
 	}
 }
