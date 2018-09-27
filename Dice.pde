@@ -11,6 +11,7 @@ void draw()
 		for(int x = 5; x <= 500; x+=55)
 		{
 		Die bobu = new Die(x,y);
+		bobu.roll();
 		bobu.show();
 		}
 	}
@@ -30,12 +31,37 @@ class Die //models one single dice cube
 	}
 	void roll()
 	{
-		//your code here
+		numRoll = (int)(Math.random()*6)+1;
 	}
 	void show()
 	{
 		noStroke();
 		fill(255);
 		rect(myX, myY, 50, 50, 5);
+		fill(0);
+		if(numRoll==1)
+			{
+				ellipse(myX+25, myY+25, 10,10);
+			}
+		if(numRoll==2)
+			{
+				ellipse(myX+25, myY+25, 10,10);
+			}
+		if(numRoll==3)
+			{
+				ellipse(myX+25, myY+25, 10,10);
+			}
+		if(numRoll==4)
+			{
+				ellipse(myX+25, myY+25, 10,10);
+			}		if(numRoll==1)
+		if(numRoll==5)
+			{
+				ellipse(myX+25, myY+25, 10,10);
+			}
+		else
+			{
+				ellipse(myX+25, myY+25, 10,10);
+			} 
 	}
 }
