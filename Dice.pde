@@ -1,11 +1,11 @@
 void setup()
 {
 	noLoop();
-	size(500,500);
+	size(500,600);
 }
 void draw()
 {
-	background(100,100,100);
+	background((int)(Math.random()*200),(int)(Math.random()*200),(int)(Math.random()*200));
 	for(int y = 5; y <= 500; y+=55)
 	{
 		for(int x = 5; x <= 500; x+=55)
@@ -16,10 +16,10 @@ void draw()
 		}
 	}
 }
-// void mousePressed()
-// {
-	
-// }
+ void mousePressed()
+ {
+	redraw();
+ }
 class Die //models one single dice cube
 {
 	int numRoll,myX,myY;
@@ -43,25 +43,41 @@ class Die //models one single dice cube
 			{
 				ellipse(myX+25, myY+25, 10,10);
 			}
-		if(numRoll==2)
-			{
-				ellipse(myX+25, myY+25, 10,10);
-			}
-		if(numRoll==3)
-			{
-				ellipse(myX+25, myY+25, 10,10);
-			}
-		if(numRoll==4)
-			{
-				ellipse(myX+25, myY+25, 10,10);
-			}		if(numRoll==1)
-		if(numRoll==5)
-			{
-				ellipse(myX+25, myY+25, 10,10);
-			}
-		else
-			{
-				ellipse(myX+25, myY+25, 10,10);
-			} 
+		 if(numRoll==2)
+		 	{
+		 		ellipse(myX+10, myY+10, 10,10);
+        ellipse(myX+40,myY+40,10,10);
+		 	}
+		 if(numRoll==3)
+		 	{
+		 		ellipse(myX+25, myY+25, 10,10);
+        ellipse(myX+10, myY+10, 10,10);
+        ellipse(myX+40,myY+40,10,10);
+		 	}
+		 if(numRoll==4)
+		 	{
+        ellipse(myX+10, myY+10, 10,10);
+        ellipse(myX+40,myY+40,10,10);
+        ellipse(myX+40, myY+10, 10,10);
+        ellipse(myX+10,myY+40,10,10);
+		 	}	
+		 if(numRoll==5)
+		 	{
+        ellipse(myX+10, myY+10, 10,10);
+        ellipse(myX+40,myY+40,10,10);
+        ellipse(myX+40, myY+10, 10,10);
+        ellipse(myX+10,myY+40,10,10);
+        ellipse(myX+25, myY+25, 10,10);
+		 	}
+		 if(numRoll==6)
+		 	{
+        ellipse(myX+10, myY+10, 10,10);
+        ellipse(myX+40,myY+40,10,10);
+        ellipse(myX+40, myY+10, 10,10);
+        ellipse(myX+10,myY+40,10,10);
+        ellipse(myX+10, myY+25, 10,10);
+        ellipse(myX+40, myY+25, 10,10);
+        
+		 	} 
 	}
 }
