@@ -3,6 +3,8 @@ void setup()
 	noLoop();
 	size(500,600);
 }
+
+int counting = 0;
 void draw()
 {
 	background((int)(Math.random()*200),(int)(Math.random()*200),(int)(Math.random()*200));
@@ -13,12 +15,16 @@ void draw()
 		Die bobu = new Die(x,y);
 		bobu.roll();
 		bobu.show();
+		counting = counting + bobu.numRoll;
 		}
 	}
+	textSize(25);
+	text("Dice roll: "+counting,150,580);
 }
  void mousePressed()
  {
 	redraw();
+	counting = 0;
  }
 class Die //models one single dice cube
 {
@@ -32,6 +38,7 @@ class Die //models one single dice cube
 	void roll()
 	{
 		numRoll = (int)(Math.random()*6)+1;
+
 	}
 	void show()
 	{
